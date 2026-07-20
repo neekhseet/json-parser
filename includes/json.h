@@ -19,14 +19,12 @@ typedef enum {
     JSON_NULL
 } JsonTokens;
 
-typedef struct Token Token;
-typedef struct TokenStream TokenStream;
 
-struct Token
+typedef struct Token
 {
     JsonTokens type; 
     char *t;
-};
+} Token;
 
 struct TokenStream 
 {
@@ -34,7 +32,9 @@ struct TokenStream
 
     size_t capacity;
     size_t size;
-};
+} TokenStream;
+
+Token get_token(const char *t);
 
 #ifdef __cplusplus
 }
