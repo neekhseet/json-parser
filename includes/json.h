@@ -4,6 +4,7 @@
 extern "C" 
 {
 #endif
+#include <stddef.h>
 
 typedef enum {
     JSON_BEGIN_OBJECT,
@@ -33,7 +34,7 @@ struct TokenStream
 
     size_t capacity;
     size_t size;
-}
+};
 
 #ifdef __cplusplus
 }
