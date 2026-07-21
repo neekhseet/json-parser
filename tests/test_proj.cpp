@@ -26,6 +26,6 @@ TEST(ProjTest, TokenizeLeftBracketSymbol)
 TEST(ProjTest, TokenizeRightBracketSymbol)
 {
     Token tok = get_token("]");
-    EXPECT_EQ(tok.type, JSON_BEGIN_ARRAY);
+    EXPECT_EQ(tok.type, JSON_END_ARRAY);
     EXPECT_STREQ(tok.t, "]");
 }
