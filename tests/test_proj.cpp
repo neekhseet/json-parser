@@ -9,3 +9,10 @@ TEST(ProjTest, TokenizeRightBrace)
     EXPECT_EQ(tok.type, JSON_BEGIN_OBJECT);
     EXPECT_STREQ(tok.t, "{");
 };
+
+TEST(ProjTest, TokenizeLeftBrace)
+{
+    Token tok = get_token("}");
+    EXPECT_EQ(tok.type, JSON_END_OBJECT);
+    EXPECT_STREQ(tok.t, "}");
+}
