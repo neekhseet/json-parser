@@ -1,16 +1,16 @@
 #include "../includes/json.h"
 
-Token get_token(const char *t)
+Token get_token(const char *value)
 {
     Token new;
-    new.type = get_token_type(t);
-    new.t = t;
+    new.type = get_token_type(value);
+    new.value = value;
     return new;
 }
 
-JsonTokens get_token_type(const char *c)
+JsonTokens get_token_type(const char *value)
 {
-    switch(*c)
+    switch(*value)
     {
         case '{':
             return JSON_BEGIN_OBJECT;
