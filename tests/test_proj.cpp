@@ -29,9 +29,18 @@ TEST(ProjTest, TokenizeRightBracketSymbol)
     EXPECT_EQ(tok.type, JSON_END_ARRAY);
     EXPECT_STREQ(tok.t, "]");
 }
+
 TEST(ProjTest, TokenizeColonSymbol)
 {
     Token tok = get_token(":");
     EXPECT_EQ(tok.type, JSON_COLON);
     EXPECT_STREQ(tok.t, ":");
+}
+
+
+TEST(ProjTest, TokenizeCommaSymbol)
+{
+    Token tok = get_token(",");
+    EXPECT_EQ(tok.type, JSON_COMMA);
+    EXPECT_STREQ(tok.t, ",");
 }
