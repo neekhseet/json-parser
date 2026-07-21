@@ -15,6 +15,9 @@ JsonTokens get_token_type(const char *c)
         case '{':
             return JSON_BEGIN_OBJECT;
             break;
+        case '}':
+            return JSON_END_OBJECT;
+            break;
     };
 
     return JSON_EOF;
