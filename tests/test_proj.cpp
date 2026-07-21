@@ -44,3 +44,10 @@ TEST(ProjTest, TokenizeCommaSymbol)
     EXPECT_EQ(tok.type, JSON_COMMA);
     EXPECT_STREQ(tok.t, ",");
 }
+
+TEST(ProjTest, TokenizeString)
+{
+    Token tok = get_token("\"string\"");
+    EXPECT_EQ(tok.type, JSON_STRING);
+    EXPECT_STREQ(tok.t, "\"string\"");
+}
