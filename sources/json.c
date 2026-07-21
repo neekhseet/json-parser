@@ -26,7 +26,10 @@ JsonTokens get_token_type(const char *c)
             break;
         case ':':
             return JSON_COLON;
-            break; 
+            break;
+        case ',':
+            return JSON_COMMA;
+            break;
     };
 
     return JSON_EOF;
