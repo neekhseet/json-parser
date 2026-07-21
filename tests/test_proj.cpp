@@ -14,3 +14,11 @@ TEST(ProjTest, TokenizeLeftBrace)
     EXPECT_EQ(tok.type, JSON_END_OBJECT);
     EXPECT_STREQ(tok.t, "}");
 }
+
+
+TEST(ProjTest, TokenizeLeftBracketSymbol)
+{
+    Token tok = get_token("[");
+    EXPECT_EQ(tok.type, JSON_BEGIN_ARRAY);
+    EXPECT_STREQ(tok.t, "[");
+}
