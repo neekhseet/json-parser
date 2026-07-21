@@ -22,7 +22,7 @@ JsonTokens get_token_type(const char *c)
             return JSON_BEGIN_ARRAY;
             break;
         case ']':
-            return JSON_BEGIN_ARRAY;
+            return JSON_END_ARRAY;
             break;
     };
 
