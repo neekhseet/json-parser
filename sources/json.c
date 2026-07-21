@@ -21,6 +21,9 @@ JsonTokens get_token_type(const char *c)
         case '[':
             return JSON_BEGIN_ARRAY;
             break;
+        case ']':
+            return JSON_BEGIN_ARRAY;
+            break;
     };
 
     return JSON_EOF;
