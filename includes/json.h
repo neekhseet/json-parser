@@ -16,14 +16,15 @@ typedef enum {
     JSON_STRING,
     JSON_NUMBER,
     JSON_BOOLEAN,
-    JSON_NULL
+    JSON_NULL,
+    JSON_EOF
 } JsonTokens;
 
 
 typedef struct Token
 {
     JsonTokens type; 
-    char *t;
+    const char *t;
 } Token;
 
 struct TokenStream 
@@ -35,7 +36,7 @@ struct TokenStream
 } TokenStream;
 
 Token get_token(const char *t);
-
+JsonTokens get_token_type(const char *c);
 #ifdef __cplusplus
 }
 #endif
