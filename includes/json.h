@@ -27,7 +27,7 @@ typedef struct Token
     const char *t;
 } Token;
 
-struct TokenStream 
+typedef struct TokenStream 
 {
     Token *tokens;
 
