@@ -5,6 +5,7 @@ extern "C"
 {
 #endif
 #include <stddef.h>
+#include <ctype.h>
 
 typedef enum {
     JSON_BEGIN_OBJECT,
