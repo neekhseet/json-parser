@@ -37,6 +37,7 @@ JsonTokens get_token_type(const char *value)
             if (*value == 't' || *value == 'f') 
                 return JSON_BOOLEAN;
             if (isdigit(*value) || *value == '-') return JSON_NUMBER;
+            if (*value == 'N') return JSON_NULL;
     };
 
     return JSON_EOF;
