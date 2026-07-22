@@ -80,3 +80,10 @@ TEST(ProjTest, TokenizeNull)
     EXPECT_EQ(tok.type, JSON_NULL);
     EXPECT_STREQ(tok.value, "NULL");
 }
+
+TEST(ProjTest, TokenizeEndOfFile)
+{
+    Token tok = get_token("\0");
+    EXPECT_EQ(tok.type, JSON_EOF);
+    EXPECT_STREQ(tok.value, "\0");
+}
