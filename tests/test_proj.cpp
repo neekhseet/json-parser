@@ -73,3 +73,10 @@ TEST(ProjTest, TokenizeNegativeNumber)
     EXPECT_EQ(tok.type, JSON_NUMBER);
     EXPECT_STREQ(tok.value, "-1");
 }
+
+TEST(ProjTest, TokenizeNull)
+{
+    Token tok = get_token("NULL");
+    EXPECT_EQ(tok.type, JSON_NULL);
+    EXPECT_STREQ(tok.value, "NULL");
+}
