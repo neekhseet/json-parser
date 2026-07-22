@@ -41,5 +41,5 @@ JsonTokens get_token_type(const char *value)
             if (*value == '\0') return JSON_EOF;
     };
 
-    return JSON_EOF;
+    return JSON_UNKNOWN;
 }

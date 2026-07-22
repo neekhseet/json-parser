@@ -18,7 +18,8 @@ typedef enum {
     JSON_NUMBER,
     JSON_BOOLEAN,
     JSON_NULL,
-    JSON_EOF
+    JSON_EOF,
+    JSON_UNKNOWN
 } JsonTokens;
 
 
