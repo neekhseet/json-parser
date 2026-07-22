@@ -58,3 +58,10 @@ TEST(ProjTest, TokenizeBoolean)
     EXPECT_EQ(tok.type, JSON_BOOLEAN);
     EXPECT_STREQ(tok.value, "true");
 }
+
+TEST(ProjTest, TokenizeNumber)
+{
+    Token tok = get_token("1");
+    EXPECT_EQ(tok.type, JSON_NUMBER);
+    EXPECT_STREQ(tok.value, "1");
+}
