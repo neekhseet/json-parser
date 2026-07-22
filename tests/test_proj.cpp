@@ -87,3 +87,10 @@ TEST(ProjTest, TokenizeEndOfFile)
     EXPECT_EQ(tok.type, JSON_EOF);
     EXPECT_STREQ(tok.value, "\0");
 }
+
+TEST(ProjTest, TokenizeUnknown)
+{
+    Token tok = get_token(" ");
+    EXPECT_EQ(tok.type, JSON_UNKNOWN);
+    EXPECT_STREQ(tok.value, " ");
+}
