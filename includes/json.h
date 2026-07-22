@@ -26,7 +26,7 @@ typedef enum {
 typedef struct Token
 {
     TokenType type; 
-    char value[256];
+    char *value;
 } Token;
 
 typedef struct TokenStream 

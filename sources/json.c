@@ -1,29 +1,24 @@
 #include "../includes/json.h"
+#include "../includes/utils.h"
 
 Token get_token(const char *text)
 {
     const char *cursor = text;
     return next_token(&cursor);
 }
-
+    
 Token next_token(const char **cursor)
 {
     Token t;
     t.type = get_token_type(**cursor);
     
-    // switch (t.type)
-    // {
-    //     case JSON_BEGIN_OBJECT:
-    //         t.value[0] = '{';
-    //         // (*cursor)++;
-    //         break;
-    //     default:
-    //         t.value[0] = '{';
-    //         break;
-    // }
+    switch (t.type)
+    {
+        default:
+            t.value = copy_range(*cursor, 1);
+            break;
+    }
     
-    t.value[0] = '{';
-    t.value[1] = '\0';
     return t;
 }
 
