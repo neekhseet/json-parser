@@ -65,3 +65,11 @@ TEST(ProjTest, TokenizeNumber)
     EXPECT_EQ(tok.type, JSON_NUMBER);
     EXPECT_STREQ(tok.value, "1");
 }
+
+
+TEST(ProjTest, TokenizeNegativeNumber)
+{
+    Token tok = get_token("-1");
+    EXPECT_EQ(tok.type, JSON_NUMBER);
+    EXPECT_STREQ(tok.value, "-1");
+}
