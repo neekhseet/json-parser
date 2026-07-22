@@ -8,7 +8,7 @@ Token get_token(const char *value)
     return new;
 }
 
-JsonTokens get_token_type(const char *value)
+TokenType get_token_type(const char *value)
 {
     switch(*value)
     {
