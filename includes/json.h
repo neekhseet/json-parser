@@ -26,7 +26,7 @@ typedef enum {
 typedef struct Token
 {
     TokenType type; 
-    const char *value;
+    char value[256];
 } Token;
 
 typedef struct TokenStream 
@@ -37,8 +37,10 @@ typedef struct TokenStream
     size_t size;
 } TokenStream;
 
+Token next_token(const char **cursor);
 Token get_token(const char *value);
-TokenType get_token_type(const char *value);
+TokenType get_token_type(const char value);
+
 #ifdef __cplusplus
 }
 #endif
