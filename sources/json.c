@@ -2,9 +2,9 @@
 
 Token get_token(const char *value)
 {
-    Token new;
-    new.type = get_token_type(value);
-    new.value = value;
+    /*  
+    JsonTokens type = get_token_type()
+    */
     return new;
 }
 
@@ -37,7 +37,7 @@ JsonTokens get_token_type(const char *value)
             if (*value == 't' || *value == 'f') 
                 return JSON_BOOLEAN;
             if (isdigit(*value) || *value == '-') return JSON_NUMBER;
-            if (*value == 'N') return JSON_NULL;
+            if (*value == 'n') return JSON_NULL;
             if (*value == '\0') return JSON_EOF;
     };
 
