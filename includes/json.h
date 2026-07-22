@@ -5,6 +5,7 @@ extern "C"
 {
 #endif
 #include <stddef.h>
+#include <ctype.h>
 
 typedef enum {
     JSON_BEGIN_OBJECT,
@@ -17,14 +18,15 @@ typedef enum {
     JSON_NUMBER,
     JSON_BOOLEAN,
     JSON_NULL,
-    JSON_EOF
+    JSON_EOF,
+    JSON_UNKNOWN
 } JsonTokens;
 
 
 typedef struct Token
 {
     JsonTokens type; 
-    const char *t;
+    const char *value;
 } Token;
 
 typedef struct TokenStream 
@@ -35,8 +37,8 @@ typedef struct TokenStream
     size_t size;
 } TokenStream;
 
-Token get_token(const char *t);
-JsonTokens get_token_type(const char *c);
+Token get_token(const char *value);
+JsonTokens get_token_type(const char *value);
 #ifdef __cplusplus
 }
 #endif
