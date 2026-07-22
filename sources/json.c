@@ -33,6 +33,8 @@ JsonTokens get_token_type(const char *value)
         case '"':
             return JSON_STRING;
             break;
+        default:
+            if (*value == 't' || *value == 'f') return JSON_BOOLEAN;
     };
 
     return JSON_EOF;
