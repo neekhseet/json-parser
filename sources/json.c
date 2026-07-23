@@ -14,6 +14,9 @@ Token next_token(const char **cursor)
     
     switch (t.type)
     {
+        case JSON_STRING:
+            t.value = parse_string(cursor);
+            break;
         default:
             t.value = copy_range(*cursor, 1);
             break;
@@ -56,4 +59,26 @@ TokenType get_token_type(const char value)
     };
 
     return JSON_UNKNOWN;
+}
+
+
+char *parse_string(const char **cursor)
+{
+    const char *begin = *cursor;
+    
+    (*cursor)++;
+    begin = *cursor;
+
+    while (**cursor != '"' && **cursor != '\0')
+    {
+        (*cursor)++;
+    }
+
+    size_t len = *cursor - begin;
+    char *res = copy_range(begin, len);
+
+    if (**cursor == '"')
+        (*cursor)++;
+
+    return res;
 }
