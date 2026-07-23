@@ -49,7 +49,7 @@ TEST(ProjTest, TokenizeStringType)
 {
     Token tok = get_token("\"string\"");
     EXPECT_EQ(tok.type, JSON_STRING);
-    EXPECT_STREQ(tok.value, "\"string\"");
+    EXPECT_STREQ(tok.value, "string");
 }
 
 TEST(ProjTest, TokenizeBooleanType)
@@ -76,9 +76,9 @@ TEST(ProjTest, TokenizeNegativeNumberType)
 
 TEST(ProjTest, TokenizeNullType)
 {
-    Token tok = get_token("NULL");
+    Token tok = get_token("null");
     EXPECT_EQ(tok.type, JSON_NULL);
-    EXPECT_STREQ(tok.value, "NULL");
+    EXPECT_STREQ(tok.value, "null");
 }
 
 TEST(ProjTest, TokenizeEndOfFileType)

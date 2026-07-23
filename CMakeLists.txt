@@ -14,7 +14,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 add_library(proj_lib STATIC
-    sources/json.c
+    sources/json.c sources/utils.c
 )
 target_include_directories(proj_lib PUBLIC headers)
 
