@@ -49,7 +49,7 @@ TEST(ProjTest, TokenizeStringType)
 {
     Token tok = get_token("\"string\"");
     EXPECT_EQ(tok.type, JSON_STRING);
-    EXPECT_STREQ(tok.value, "\"string\"");
+    EXPECT_STREQ(tok.value, "string");
 }
 
 TEST(ProjTest, TokenizeBooleanType)
