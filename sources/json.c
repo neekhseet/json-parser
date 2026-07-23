@@ -17,6 +17,9 @@ Token next_token(const char **cursor)
         case JSON_STRING:
             t.value = parse_string(cursor);
             break;
+        case JSON_NUMBER:
+            t.value = parse_number(cursor);
+            break;
         default:
             t.value = copy_range(*cursor, 1);
             break;
@@ -80,5 +83,21 @@ char *parse_string(const char **cursor)
     if (**cursor == '"')
         (*cursor)++;
 
+    return res;
+}
+
+char *parse_number(const char **cursor)
+{
+    const char *begin = *cursor;
+
+    while(**cursor == '-' || isdigit(**cursor))
+    {
+        (*cursor)++;
+    }
+
+    size_t len = *cursor - begin;
+    char *res = copy_range(begin, len);
+
+    if(isdigit(**cursor)) (*cursor)++;
     return res;
 }
