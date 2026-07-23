@@ -20,6 +20,9 @@ Token next_token(const char **cursor)
         case JSON_NUMBER:
             t.value = parse_number(cursor);
             break;
+        case JSON_BOOLEAN:
+            t.value = parse_boolean(cursor);
+            break;
         default:
             t.value = copy_range(*cursor, 1);
             break;
@@ -99,5 +102,19 @@ char *parse_number(const char **cursor)
     char *res = copy_range(begin, len);
 
     if(isdigit(**cursor)) (*cursor)++;
+    return res;
+}
+
+char *parse_boolean(const char **cursor)
+{
+    const char *begin = *cursor;
+
+    while(**cursor != 'e')
+    {
+        (*cursor)++;
+    }
+    size_t len = *cursor - begin;
+    char *res = copy_range(begin, len + 1);
+    if (**cursor == 'e') (*cursor)++;
     return res;
 }
