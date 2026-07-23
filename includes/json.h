@@ -44,6 +44,7 @@ TokenType get_token_type(const char value);
 char *parse_string(const char **cursor);
 char *parse_number(const char **cursor);
 char *parse_boolean(const char **cursor);
+char *parse_null(const char **cursor);
 #ifdef __cplusplus
 }
 #endif
